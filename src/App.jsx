@@ -1,3 +1,4 @@
+// App.jsx
 import { useState } from "react";
 import "./App.css";
 import axios from "axios";
@@ -40,7 +41,8 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="search-bar">
+      {/* 🔹 FIX: className changed to search-container */}
+      <div className="search-container">
         <input
           type="text"
           value={githubUserName}
@@ -66,7 +68,6 @@ function App() {
 
       {repos.length > 0 && (
         <div className="repo-list">
-          {/* <h3>Repositories</h3> */}
           <h2 className="repos-heading">Repositories</h2>
           <div className="repo-grid">
             {repos.map((repo) => (
@@ -75,7 +76,7 @@ function App() {
                   <h4>{repo.name}</h4>
                 </a>
                 <p>{repo.description ? repo.description : "No description"}</p>
-                <p>Stars: {repo.stargazers_count}</p>
+                <p>⭐ {repo.stargazers_count}</p>
               </div>
             ))}
           </div>
