@@ -21,6 +21,7 @@ input {
   margin-bottom: 12px;
   font-size: 16px;
   outline: none;
+  box-sizing: border-box;
 }
 
 button {
@@ -66,7 +67,6 @@ button:hover {
   object-fit: cover;  
 }
 
-
 /* Repositories heading */
 .repos-heading {
   font-size: 22px;
@@ -104,7 +104,6 @@ button:hover {
   white-space: normal;
 }
 
-
 .repo-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.2);
@@ -120,18 +119,25 @@ button:hover {
   white-space: normal;
 }
 
-
 /* Responsive */
 @media (max-width: 1024px) {
   .repo-card {
-    flex: 1 1 calc(50% - 30px); /* 2 cards per row */
+    flex: 1 1 calc(50% - 30px); /* 2 cards per row on tablet */
   }
 }
 
 @media (max-width: 600px) {
+  input, button {
+    max-width: 100%;  /* Search bar and button full width */
+  }
+
+  .repo-list {
+    flex-direction: column; /* stack repos */
+    align-items: center;
+  }
+
   .repo-card {
     flex: 1 1 100%; /* 1 card per row */
     max-width: 100%;
   }
 }
-
