@@ -66,7 +66,8 @@ function App() {
 
       {repos.length > 0 && (
         <div className="repo-list">
-          <h3>Repositories</h3>
+          {/* <h3>Repositories</h3> */}
+          <h2 className="repos-heading">Repositories</h2>
           <div className="repo-grid">
             {repos.map((repo) => (
               <div key={repo.id} className="repo-card">
